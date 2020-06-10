@@ -114,4 +114,10 @@ public class StudentInMemoryDAOImpl implements StudentDAO {
 		return StudentInMemoryDAOImpl.upisaniStudenti.values().stream().filter(s -> s.getGodinaFakulteta() == KONSTANTE.STUDENT_APSOLVENT)
 				.collect(Collectors.toList());
 	}
+
+	@Override
+	public List<Student> getAll(int pageNumber) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

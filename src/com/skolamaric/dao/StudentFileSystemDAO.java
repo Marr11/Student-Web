@@ -132,4 +132,10 @@ public class StudentFileSystemDAO implements StudentDAO {
 		return FILE_ROOT  + brojIndeksa + EXTENZIJA;
 	}
 
+	@Override
+	public List<Student> getAll(int pageNumber) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

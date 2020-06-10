@@ -59,6 +59,15 @@ public class AdministriranjeStudenata {
 	public List<Student> dajSveStudente() throws ResultNotFoundException {
 		return studentDAO.getAll();
 	}
+	public List<Student> dajSveStudente(int pageNumber) throws ResultNotFoundException {
+		return studentDAO.getAll(pageNumber);
+	}
+	public Student dajStudenta(String brojIndeksa) throws ResultNotFoundException {
+		return studentDAO.read(brojIndeksa);
+	}
+	public void obrisiStudenta(String brojIndeksa) {
+		studentDAO.delete(brojIndeksa);
+	}
 
 	/*
 	 * Metoda za odvajanje liste studenata prve godine return List studenti prve
