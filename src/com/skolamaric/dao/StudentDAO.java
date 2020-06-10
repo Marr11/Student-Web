@@ -19,4 +19,5 @@ public interface StudentDAO {
 	List<Student> getStudentiApsolventi() throws ResultNotFoundException;
 	
 	int count ()throws ResultNotFoundException;
+	List<Student> getAll(int pageNumber);
 }

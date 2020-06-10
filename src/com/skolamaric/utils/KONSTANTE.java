@@ -10,6 +10,7 @@ public class KONSTANTE {
 	public static final int STUDENT_TRECE_GODINE = 3;
 	public static final int STUDENT_CETVRTE_GODINE = 4;
 	public static final int STUDENT_APSOLVENT = 5;
+	public static final int BROJ_PRIKAZA_PO_STRANICI = 10;
 	public static final String myDriver = "com.mysql.cj.jdbc.Driver";
 	public static final String myUrl = "jdbc:mysql://localhost:3306/student?tz=useLegacyDatetimeCode=false&serverTimezone=Europe/Berlin";
 

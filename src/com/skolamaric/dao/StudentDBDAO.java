@@ -399,4 +399,38 @@ public class StudentDBDAO implements StudentDAO {
 		//return DriverManager.getConnection(KONSTANTE.myUrl, "root", "root");
 	}
 
+	@Override
+	public List<Student> getAll(int pageNumber) {
+		List<Student> studenti = new ArrayList<Student>();
+		
+		try {			
+			// create a mysql database connection
+			Connection conn = getConnection();
+			int brojPrvogSloga = (pageNumber - 1)*KONSTANTE.BROJ_PRIKAZA_PO_STRANICI +1;
+			// the mysql insert statement
+			String query = "select * from studenti LIMIT "+ brojPrvogSloga +  " ," +  KONSTANTE.BROJ_PRIKAZA_PO_STRANICI;
+			// create the mysql insert preparedstatement
+			PreparedStatement preparedStmt = conn.prepareStatement(query);			
+			// process the results
+			ResultSet rs = preparedStmt.executeQuery();
+
+			while (rs.next()) {
+				Student student = new Student();
+				student.setIme(rs.getString("ime"));
+				student.setPrezime(rs.getString("prezime"));
+				student.setGodinaFakulteta(rs.getInt("godinaFakulteta"));
+				student.setAktivanStudent(rs.getBoolean("aktivanStudent"));
+				student.setBrojIndeksa(rs.getString("brojIndeksa"));
+				studenti.add(student);
+			}
+			rs.close();
+			preparedStmt.close();
+			conn.close();
+		} catch (Exception e) {
+			System.err.println("Got an exception!");
+			System.err.println(e.getMessage());
+		}
+		return studenti;
+	}
+
 }
