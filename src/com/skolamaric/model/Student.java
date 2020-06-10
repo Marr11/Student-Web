@@ -4,7 +4,7 @@ package com.skolamaric.model;
 	public class Student {
 		private String ime;
 		private String prezime;
-		private int godinaFakulteta;
+		private Integer godinaFakulteta;
 		private boolean aktivanStudent;
 		private String brojIndeksa;
 
@@ -23,10 +23,10 @@ package com.skolamaric.model;
 		public void setPrezime(String prezime) {
 			this.prezime = prezime;
 		}
-		public int getGodinaFakulteta() {
+		public Integer getGodinaFakulteta() {
 			return godinaFakulteta;
 		}
-		public void setGodinaFakulteta(int godinaFakulteta) {
+		public void setGodinaFakulteta(Integer godinaFakulteta) {
 			this.godinaFakulteta = godinaFakulteta;
 		}
 		
