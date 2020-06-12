@@ -24,9 +24,9 @@ public class StudentDBDAO implements StudentDAO {
 
 	@Override
 	public Student create(Student student) {
-		student.setIme(KONSTANTE.slucajnoSlovo() + KONSTANTE.slucajnoSlovo());
-		student.setPrezime(KONSTANTE.slucajnoSlovo() + KONSTANTE.slucajnoSlovo() + KONSTANTE.slucajnoSlovo()); 
-		student.setGodinaFakulteta(PrikaziUtils.godinaStudija());
+		//student.setIme(KONSTANTE.slucajnoSlovo() + KONSTANTE.slucajnoSlovo());
+		//student.setPrezime(KONSTANTE.slucajnoSlovo() + KONSTANTE.slucajnoSlovo() + KONSTANTE.slucajnoSlovo()); 
+		//student.setGodinaFakulteta(PrikaziUtils.godinaStudija());
 		try {
 			// create a mysql database connection
 			Connection conn = getConnection();
