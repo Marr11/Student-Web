@@ -19,6 +19,7 @@
 			for (Student student : studenti) {
 				out.write("<tr>");
 				out.write(String.format(dataTemplate, student.getIme()));
+				out.write(String.format(dataTemplate, student.getPrezime()));
 				out.write(String.format(dataTemplate, student.getGodinaFakulteta().toString()));
 				
 				String studentLinkTemplate = "<a href='/StudentWeb/vezbaBaza/prikaziStudenta.jsp?id=%s' target=_blank >%s</a>";

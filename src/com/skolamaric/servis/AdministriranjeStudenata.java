@@ -68,6 +68,10 @@ public class AdministriranjeStudenata {
 	public void obrisiStudenta(String brojIndeksa) {
 		studentDAO.delete(brojIndeksa);
 	}
+	
+	public void unesiStudenta(Student student) {
+		studentDAO.create(student);
+	}
 
 	/*
 	 * Metoda za odvajanje liste studenata prve godine return List studenti prve
