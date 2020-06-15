@@ -9,4 +9,28 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  
+   <servlet> 
+      <servlet-name>Hello</servlet-name>
+      <servlet-class>com.skolamaric.servllets</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+      <servlet-name>Hello</servlet-name>
+      <url-pattern>/hello.html</url-pattern>
+    </servlet-mapping>
+    
+    <!-- 
+     -->
+     
+    <servlet> 
+      <servlet-name>ListajStudente</servlet-name>
+      <servlet-class>com.skolamaric.servllets.ListajStudente</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+      <servlet-name>ListajStudente</servlet-name>
+      <url-pattern>/vezbaServleti/listajStudente.html</url-pattern>
+    </servlet-mapping>
+  
 </web-app>
