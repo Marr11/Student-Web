@@ -32,5 +32,15 @@
       <servlet-name>ListajStudente</servlet-name>
       <url-pattern>/vezbaServleti/listajStudente.html</url-pattern>
     </servlet-mapping>
+    
+    <servlet> 
+      <servlet-name>ObrisiStudenta</servlet-name>
+      <servlet-class>com.skolamaric.servllets.ObrisiStudenta</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+      <servlet-name>ObrisiStudenta</servlet-name>
+      <url-pattern>/vezbaServleti/obrisiStudenta.html</url-pattern>
+    </servlet-mapping>
   
 </web-app>

@@ -9,19 +9,24 @@
 <body>
 <table border="1">
 		<%
-		String dataTemplate = "<td>%s</td>";
-		int pageNumber = (Integer)request.getAttribute("pageNumber");
-				
-		List<Student> studenti = (List<Student>)request.getAttribute("listaStudenata");
 		
-		if (studenti.size() > 0) {
+		int pageNumber = 1;
+		try{
+			pageNumber = (Integer)request.getAttribute("pageNumber");
+		}catch(NumberFormatException e){
+			
+		}
+						
+		List<Student> studenti = (List<Student>)request.getAttribute("listaStudenata");
+		String dataTemplate = "<td>%s</td>";
+		if(studenti.size() > 0) {
 			for (Student student : studenti) {
 				out.write("<tr>");
 				out.write(String.format(dataTemplate, student.getIme()));
 				out.write(String.format(dataTemplate, student.getPrezime()));
 				out.write(String.format(dataTemplate, student.getGodinaFakulteta().toString()));
 				
-				String studentLinkTemplate = "<a href='/StudentWeb/vezbaBaza/prikaziStudenta.jsp?id=%s' target=_blank >%s</a>";
+				String studentLinkTemplate = "<a href='/vezbaBaza/prikaziStudenta.jsp?id=%s' target=_blank >%s</a>";
 				String brojIndeksa = student.getBrojIndeksa();
 				String studentLink = String.format(studentLinkTemplate, brojIndeksa, brojIndeksa);
 				out.write(String.format(dataTemplate, studentLink));
@@ -33,13 +38,10 @@
 			out.write("</br>");
 		}
 		%>
-		<a href="/StudentWeb/vezbaBaza/listaStudenata.jsp?p=<%=pageNumber - 1%>">  < </a>		
+		<a href="/StudentWeb/vezbaServleti/listajStudente.html?p=<%=pageNumber - 1%>">  < </a>		
 		<div > Strana: <%= pageNumber	%></div>
-		<a	href="/StudentWeb/vezbaBaza/listaStudenata.jsp?p=<%=pageNumber + 1%>"> > </a>
-	</table>
-
-
-
+		<a href="/StudentWeb/vezbaServleti/listajStudente.html?p=<%=pageNumber + 1%>"> > </a>
+</table>
 
 </body>
 </html>
