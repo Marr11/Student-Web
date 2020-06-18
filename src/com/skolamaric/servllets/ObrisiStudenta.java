@@ -36,12 +36,11 @@ public class ObrisiStudenta extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String brojIndeksa ="1";
-		brojIndeksa = request.getParameter("id");
+		String brojIndeksa = request.getParameter("id");
 			
 		AdministriranjeStudenata administracija = new AdministriranjeStudenata();
 		administracija.obrisiStudenta(brojIndeksa);
-		request.setAttribute("brojIndeksa", brojIndeksa);
+		//request.setAttribute("brojIndeksa", brojIndeksa);
 		request.getRequestDispatcher("/vezbaServleti/obrisiStudentaPrikaz.jsp").forward(request, response);
 	}
 

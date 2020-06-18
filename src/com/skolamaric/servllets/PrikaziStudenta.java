@@ -40,7 +40,7 @@ public class PrikaziStudenta extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		String brojIndeksa ="";
-	    brojIndeksa = request.getParameter("brojIndeksa");
+	    brojIndeksa = request.getParameter("id");
 	    Student student = new Student();
 		AdministriranjeStudenata administracija = new AdministriranjeStudenata();
 		try {
@@ -50,6 +50,7 @@ public class PrikaziStudenta extends HttpServlet {
 			e.printStackTrace();
 		}
 		request.setAttribute("student", student);
+		request.setAttribute("brojIndeksa", brojIndeksa);
 		request.getRequestDispatcher("/vezbaServleti/prikaziStudenta.jsp").forward(request, response);
 	}
 

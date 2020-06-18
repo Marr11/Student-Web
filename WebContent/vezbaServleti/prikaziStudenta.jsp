@@ -8,9 +8,10 @@
 </head>
 <body>
 <% 
-	String brojIndeksa ="";
-	brojIndeksa = (String)request.getAttribute("brojIndeksa");
+	String brojIndeksa ="";	
+	brojIndeksa = request.getParameter("id");
 	
+	brojIndeksa = (String)request.getAttribute("brojIndeksa");
 	Student student = (Student)request.getAttribute("student");
     String dataTemplate = "<td>%s</td>";
 	out.write("Ime: "+student.getIme());
@@ -19,11 +20,13 @@
 	out.write("</br>");
 	out.write("Broj indeksa: "+student.getBrojIndeksa());
 	out.write("</br>");
-	String studentLinkTemplateDA = "<a href='/StudentWeb/vezbaServleti/obrisiStudenta.html?brojIndeksa=%s' target=_blank> DA</a>";
+	String studentLinkTemplateDA = "<a href='/StudentWeb/vezbaServleti/obrisiStudenta.html?id=%s' target=_blank> DA</a>";
 	String studentLinkTemplateNE = "<a href='/StudentWeb/vezbaServleti/listajStudente.html?p=1' target=_blank> NE</a>";
-	String brojIndeksa1 = student.getBrojIndeksa();
+    brojIndeksa = student.getBrojIndeksa();
 	String studentLinkDA = String.format(studentLinkTemplateDA, brojIndeksa, brojIndeksa);
 	String studentLinkNE = String.format(studentLinkTemplateNE, brojIndeksa, brojIndeksa);
+	out.write("Da li zelite da obrisete studenta?");
+	out.write("</br>");
 	out.write(String.format(dataTemplate, studentLinkDA));
 	out.write(String.format(dataTemplate, studentLinkNE));
 
