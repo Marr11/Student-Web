@@ -8,10 +8,14 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.skolamaric.exceptions.dao.ResultNotFoundException;
+import com.skolamaric.model.Student;
+import com.skolamaric.servis.AdministriranjeStudenata;
+
 /**
  * Servlet implementation class PrikaziStudenta
  */
-@WebServlet("/PrikaziStudenta")
+@WebServlet("/prikaziStudenta")
 public class PrikaziStudenta extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -34,8 +38,19 @@ public class PrikaziStudenta extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		
+		String brojIndeksa ="";
+	    brojIndeksa = request.getParameter("brojIndeksa");
+	    Student student = new Student();
+		AdministriranjeStudenata administracija = new AdministriranjeStudenata();
+		try {
+		 student = administracija.dajStudenta(brojIndeksa);
+		} catch (ResultNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		request.setAttribute("student", student);
+		request.getRequestDispatcher("/vezbaServleti/prikaziStudenta.jsp").forward(request, response);
 	}
 
 	/**

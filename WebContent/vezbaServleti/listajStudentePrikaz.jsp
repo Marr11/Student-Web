@@ -26,7 +26,7 @@
 				out.write(String.format(dataTemplate, student.getPrezime()));
 				out.write(String.format(dataTemplate, student.getGodinaFakulteta().toString()));
 				
-				String studentLinkTemplate = "<a href='/vezbaBaza/prikaziStudenta.jsp?id=%s' target=_blank >%s</a>";
+				String studentLinkTemplate = "<a href='/StudentWeb/vezbaServleti/prikaziStudenta.html?id=%s' target=_blank >%s</a>";
 				String brojIndeksa = student.getBrojIndeksa();
 				String studentLink = String.format(studentLinkTemplate, brojIndeksa, brojIndeksa);
 				out.write(String.format(dataTemplate, studentLink));

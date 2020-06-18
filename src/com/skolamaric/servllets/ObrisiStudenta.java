@@ -13,7 +13,7 @@ import com.skolamaric.servis.AdministriranjeStudenata;
 /**
  * Servlet implementation class ObrisiStudenta
  */
-@WebServlet("/ObrisiStudenta")
+@WebServlet("/obrisiStudenta")
 public class ObrisiStudenta extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -38,9 +38,11 @@ public class ObrisiStudenta extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String brojIndeksa ="1";
 		brojIndeksa = request.getParameter("id");
+			
 		AdministriranjeStudenata administracija = new AdministriranjeStudenata();
 		administracija.obrisiStudenta(brojIndeksa);
-		request.getRequestDispatcher("/vezbaServleti/listajStudentePrikaz.jsp").forward(request, response);
+		request.setAttribute("brojIndeksa", brojIndeksa);
+		request.getRequestDispatcher("/vezbaServleti/obrisiStudentaPrikaz.jsp").forward(request, response);
 	}
 
 	/**

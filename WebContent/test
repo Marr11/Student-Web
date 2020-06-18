@@ -1,0 +1,17 @@
+String brojVozackeDozvole = request.getParameter("id");
+
+		AdministriranjeVozila administracijaVozila = new AdministriranjeVozila();
+		Vlasnik vlasnik = null;
+
+		try {
+
+			vlasnik = administracijaVozila.dajVlasnikaBezVozila(brojVozackeDozvole);
+			request.setAttribute("vlasnik", vlasnik);
+			administracijaVozila.obrisiVlasnika(brojVozackeDozvole);
+			request.getRequestDispatcher("/vezba-servleti/obrisiVlasnikaPrikaz.jsp").forward(request, response);
+		} catch (ResultNotFoundException | SQLException e) {
+
+			e.printStackTrace();
+		}
+
+	}

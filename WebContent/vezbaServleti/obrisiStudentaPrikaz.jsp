@@ -9,9 +9,7 @@
 <body>
 <% 
 	String brojIndeksa ="1";
-	brojIndeksa = request.getParameter("id");
-	
-	
+	brojIndeksa = (String)request.getAttribute("brojIndeksa");	
 	out.write("Student je obrisan");
 %>
 </body>
