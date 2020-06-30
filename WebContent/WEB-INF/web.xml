@@ -55,6 +55,16 @@
       <url-pattern>/vezbaServleti/obrisiStudenta.html</url-pattern>
     </servlet-mapping>
     
+       <servlet> 
+      <servlet-name>UploadFile</servlet-name>
+      <servlet-class>com.skolamaric.servllets.UploadFile</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+      <servlet-name>UploadFile</servlet-name>
+      <url-pattern>/vezbaServleti/uploadFile.html</url-pattern>
+    </servlet-mapping>
+    
     
   
 </web-app>
