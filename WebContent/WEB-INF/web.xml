@@ -56,13 +56,13 @@
     </servlet-mapping>
     
        <servlet> 
-      <servlet-name>UploadFile</servlet-name>
-      <servlet-class>com.skolamaric.servllets.UploadFile</servlet-class>
+      <servlet-name>HandleFile</servlet-name>
+      <servlet-class>com.skolamaric.servllets.HandleFile</servlet-class>
     </servlet>
 
     <servlet-mapping>
-      <servlet-name>UploadFile</servlet-name>
-      <url-pattern>/vezbaServleti/uploadFile.html</url-pattern>
+      <servlet-name>HandleFile</servlet-name>
+      <url-pattern>/vezbaServleti/handleFile.html</url-pattern>
     </servlet-mapping>
     
     
