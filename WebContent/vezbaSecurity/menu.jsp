@@ -1,16 +1,16 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+<%@ page language="java" import= "com.skolamaric.model.User"  contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Menu page</title>
 </head>
 <body>
 <%
 
-String username = (String)request.getSession().getAttribute("username");
-out.write(username);
+	User user = (User)request.getSession().getAttribute("user");
+	out.write("Prijavljeni korisnik: "+user.getUsername());
 
 
 %>

@@ -75,5 +75,25 @@
       <url-pattern>/vezbaSecurity/loginServlet.html</url-pattern>
     </servlet-mapping>
     
+     <servlet> 
+      <servlet-name>HomePageServlet</servlet-name>
+      <servlet-class>com.skolamaric.servllets.HomePageServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+      <servlet-name>HomePageServlet</servlet-name>
+      <url-pattern>/vezbaSecurity/homePageServlet.html</url-pattern>
+    </servlet-mapping>
+    
+    <servlet> 
+      <servlet-name>AdminHomeServlet</servlet-name>
+      <servlet-class>com.skolamaric.servllets.AdminHomeServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+      <servlet-name>AdminHomeServlet</servlet-name>
+      <url-pattern>/vezbaSecurity/adminHomeServlet.html</url-pattern>
+    </servlet-mapping>
+    
   
 </web-app>

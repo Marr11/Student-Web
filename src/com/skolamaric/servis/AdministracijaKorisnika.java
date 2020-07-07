@@ -1,12 +1,13 @@
 package com.skolamaric.servis;
 
 import java.util.HashMap;
+import java.util.concurrent.ConcurrentHashMap;
 
 import com.skolamaric.model.Roles;
 import com.skolamaric.model.User;
 
 public class AdministracijaKorisnika {
-	private HashMap<String, User> users = new HashMap<>();
+	private ConcurrentHashMap<String, User> users = new ConcurrentHashMap <>();
 	
 	public AdministracijaKorisnika() {
 		init();
@@ -28,5 +29,18 @@ public class AdministracijaKorisnika {
 		
 		users.put(user.getUsername(), user);
 		
+	}
+	
+	public boolean isRegistered(String username) {
+		return (users.get(username) != null);
+	}
+	
+	public boolean isAuthenticated(String username, String password) {
+		User user = users.get(username);
+		return ((user != null )&& user.getPassword().equals(password));
+	}
+	
+	public User getUser(String username) {
+		return users.get(username);
 	}
 }
