@@ -8,16 +8,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class AdminHomeServlet
+ * Servlet implementation class LogoutServlet
  */
-@WebServlet("/AdminHomeServlet")
-public class AdminHomeServlet extends HttpServlet {
+@WebServlet("/vezbaSecurity/logout.html")
+public class LogoutServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public AdminHomeServlet() {
+    public LogoutServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -27,7 +27,8 @@ public class AdminHomeServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		request.getRequestDispatcher("/vezbaSecurity/adminHomePage.jsp").forward(request, response);
+		request.getSession().setAttribute("user", null);
+		response.sendRedirect("/StudentWeb/vezbaSecurity/login.html");
 	}
 
 	/**
@@ -36,7 +37,6 @@ public class AdminHomeServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
-		
 	}
 
 }

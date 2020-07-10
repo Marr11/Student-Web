@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class HomePageServlet
  */
-@WebServlet("/HomePageServlet")
+@WebServlet("/vezbaSecurity/homePageServlet.html")
 public class HomePageServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

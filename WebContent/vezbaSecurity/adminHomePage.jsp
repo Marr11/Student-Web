@@ -7,6 +7,7 @@
 <title>Admin home page</title>
 </head>
 <body>
+Admin home page
 <jsp:include page="menu.jsp"></jsp:include>
 </body>
 </html>

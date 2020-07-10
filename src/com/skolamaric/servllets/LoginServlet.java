@@ -14,7 +14,7 @@ import com.skolamaric.servis.AdministracijaKorisnika;
 /**
  * Servlet implementation class LoginServlet
  */
-@WebServlet("/LoginServlet")
+@WebServlet("/vezbaSecurity/loginServlet.html")
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
     AdministracijaKorisnika  administracijaKorisnika = new AdministracijaKorisnika();
@@ -40,7 +40,8 @@ public class LoginServlet extends HttpServlet {
 					request.getSession().setAttribute("user", user);
 				}
 				if(user.getRole().equals(Roles.ADMIN)) {
-					request.getRequestDispatcher("/vezbaSecurity/adminHomeServlet.html").forward(request, response);
+					//request.getRequestDispatcher("/vezbaSecurity/adminHomeServlet.html").forward(request, response);
+					response.sendRedirect("/StudentWeb/vezbaSecurity/adminHomeServlet.html");
 				}else {
 					request.getRequestDispatcher("/vezbaSecurity/homePageServlet.html").forward(request, response);
 				}

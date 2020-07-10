@@ -7,6 +7,7 @@
 <title>Menu page</title>
 </head>
 <body>
+
 <%
 
 	User user = (User)request.getSession().getAttribute("user");
@@ -14,5 +15,7 @@
 
 
 %>
+
+<a href="/StudentWeb/vezbaSecurity/logout.html">LOGOUT</a>
 </body>
 </html>
