@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.skolamaric.model.Roles;
+
 /**
  * Servlet implementation class HomePageServlet
  */
@@ -19,7 +21,7 @@ public class HomePageServlet extends BaseAutorization {
      */
     public HomePageServlet() {
         super();
-        // TODO Auto-generated constructor stub
+        this.assignedRole = Roles.USER;
     }
 
 	/**
@@ -27,7 +29,7 @@ public class HomePageServlet extends BaseAutorization {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		if(isAuthorized(request, response)){
-			request.getRequestDispatcher("/vezbaSecurity/homePage.jsp").forward(request, response);		}
+			request.getRequestDispatcher("/vezbaSecurity/pages/homePage.jsp").forward(request, response);		}
 		
 	}
 

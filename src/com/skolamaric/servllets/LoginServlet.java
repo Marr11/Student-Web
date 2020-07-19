@@ -40,18 +40,24 @@ public class LoginServlet extends HttpServlet {
 					request.getSession().setAttribute("user", user);
 				}
 				if(user.getRole().equals(Roles.ADMIN)) {
-					//request.getRequestDispatcher("/vezbaSecurity/adminHomeServlet.html").forward(request, response);
+					
 					response.sendRedirect("/StudentWeb/vezbaSecurity/adminHomeServlet.html");
 				}else {
-					request.getRequestDispatcher("/vezbaSecurity/homePageServlet.html").forward(request, response);
+					
+					response.sendRedirect("/StudentWeb/vezbaSecurity/homePageServlet.html");
 				}
 				
 			}else {
-				request.getRequestDispatcher("/vezbaSecurity/pogresanPassword.html").forward(request, response);
+				response.sendRedirect("/StudentWeb/vezbaSecurity/pogresanPassword.html");
+				
 			}
 		}else {
-			request.getRequestDispatcher("/vezbaSecurity/notRegistered.html").forward(request, response);
+			response.sendRedirect("/StudentWeb/vezbaSecurity/notRegistered.html");
+			
 		}
+	}
+	private void handleIsRegistered() {
+		 
 	}
 
 }
