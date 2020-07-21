@@ -36,19 +36,21 @@ public class LoginServlet extends HttpServlet {
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
 
-		handleIsExistingUser(response, username);
+		handleIsExistingUser(request, response, username, password);
 	}
 
-	private void handleIsExistingUser(HttpServletResponse response, String username) throws IOException {
+	private void handleIsExistingUser(HttpServletRequest request, HttpServletResponse response, String username,
+			String password) throws IOException {
 		if (administracijaKorisnika.isRegistered(username)) {
 			 
 		} else {
 			response.sendRedirect("/StudentWeb/vezbaSecurity/notRegistered.html");
+			handleAutentication(request, response, username, password);
 
 		}
 	}
 
-	private void handleAuthentication(HttpServletRequest request, HttpServletResponse response, String username,
+	private void handleAutentication(HttpServletRequest request, HttpServletResponse response, String username,
 			String password) throws IOException {
 		if (administracijaKorisnika.isAuthenticated(username, password)) {
 			handleUserRole(request, response, username);
