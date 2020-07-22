@@ -28,7 +28,7 @@ Admin home page
 				out.write(String.format(dataTemplate, student.getIme()));
 				out.write(String.format(dataTemplate, student.getPrezime()));
 				out.write(String.format(dataTemplate, student.getGodinaFakulteta().toString()));				
-				String brojIndeksa = student.getBrojIndeksa();
+				//String brojIndeksa = student.getBrojIndeksa();
 				out.write("</tr>");
 			}
 		} else {

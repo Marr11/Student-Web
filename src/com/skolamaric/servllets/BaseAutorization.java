@@ -44,14 +44,14 @@ public class BaseAutorization extends HttpServlet {
 	
 	protected boolean isAuthorized(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		
-		boolean isAutohrized = false;
+		boolean isAuthorized = false;
 		User user = (User)request.getSession().getAttribute("user");
 		if (user == null || !user.getRole().equals(assignedRole)){
 			response.sendRedirect("/StudentWeb/vezbaSecurity/notAuthorized.html");
 		}else {
-			isAutohrized = true;
+			isAuthorized = true;
 		}
-		return isAutohrized; 
+		return isAuthorized; 
 	}
 
 }

@@ -66,14 +66,14 @@ public class LoginServlet extends HttpServlet {
 		User user = administracijaKorisnika.getUser(username);
 		 if (user != null) {
 			request.getSession().setAttribute("user", user);
-		 }
+			}
 		
 		switch (user.getRole()) {
-		case ADMIN:	response.sendRedirect("/StudentWeb/vezbaSecurity/adminHomeServlet.html");
+		  case ADMIN:	response.sendRedirect("/StudentWeb/vezbaSecurity/adminHomeServlet.html");
 			        break;			
-		case USER:	response.sendRedirect("/StudentWeb/vezbaSecurity/homePageServlet.html");
+		  case USER:	response.sendRedirect("/StudentWeb/vezbaSecurity/homePageServlet.html");
 		            break;
-		default:    response.sendRedirect("/StudentWeb/vezbaSecurity/notAuthorized.html");
+		  default:    response.sendRedirect("/StudentWeb/vezbaSecurity/notAuthorized.html");
 		            break;
 		}
 		

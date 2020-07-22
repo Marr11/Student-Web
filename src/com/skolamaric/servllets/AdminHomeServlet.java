@@ -17,7 +17,8 @@ import com.skolamaric.servis.AdministriranjeStudenata;
 /**
  * Servlet implementation class AdminHomeServlet
  */
-@WebServlet("/AdminHomeServlet")
+
+@WebServlet(value = "/vezbaSecurity/adminHomeServlet.html")
 public class AdminHomeServlet extends BaseAutorization {
 	private static final long serialVersionUID = 1L;
 	
