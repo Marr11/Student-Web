@@ -1,0 +1,40 @@
+.standardWidth{
+	width: 40%;
+	text-align: center;
+}
+
+.menu-header{
+	background-color: PowderBlue;
+	text-align: right;
+	
+}
+
+.footer{
+	background: Silver;
+	text-align: right;
+	
+}
+
+.title{
+   font-size: 25px;	
+}
+
+.paginator{
+	background: MediumSlateBlue;
+	display: flex;
+	text-align: right;
+	
+}
+
+a{
+	color: white;
+	size: 15px;
+	
+}
+.space{
+	margin-left: 15px;
+	margin-right: 15px;
+}
+
+
+

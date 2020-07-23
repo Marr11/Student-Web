@@ -42,10 +42,10 @@ public class LoginServlet extends HttpServlet {
 	private void handleIsExistingUser(HttpServletRequest request, HttpServletResponse response, String username,
 			String password) throws IOException {
 		if (administracijaKorisnika.isRegistered(username)) {
-			 
+			handleAutentication(request, response, username, password); 
 		} else {
 			response.sendRedirect("/StudentWeb/vezbaSecurity/notRegistered.html");
-			handleAutentication(request, response, username, password);
+			
 
 		}
 	}

@@ -3,14 +3,20 @@
 <!DOCTYPE html>
 <html>
 <head>
+ <link rel="stylesheet" href="/StudentWeb/vezbaSecurity/assets/css/stilovi.css">
 <meta charset="ISO-8859-1">
 <title>Admin home page</title>
 </head>
 <body>
-Admin home page
+
 <jsp:include page="menu.jsp"></jsp:include>
 
-<table border="1">
+ <table border="1">
+ 	<th>Broj indeksa</th>
+ 	<th>Ime studenta</th>
+ 	<th>Prezime studenta</th>
+ 	<th>Godina fakulteta</th>
+   
 		<%
 		
 		int pageNumber = 1;
@@ -25,10 +31,11 @@ Admin home page
 		if(studenti.size() > 0) {
 			for (Student student : studenti) {
 				out.write("<tr>");
+				out.write(String.format(dataTemplate, student.getBrojIndeksa()));
 				out.write(String.format(dataTemplate, student.getIme()));
 				out.write(String.format(dataTemplate, student.getPrezime()));
-				out.write(String.format(dataTemplate, student.getGodinaFakulteta().toString()));				
-				//String brojIndeksa = student.getBrojIndeksa();
+				out.write(String.format(dataTemplate, student.getGodinaFakulteta().toString()));
+							
 				out.write("</tr>");
 			}
 		} else {
@@ -36,9 +43,16 @@ Admin home page
 			out.write("</br>");
 		}
 		%>
-		<a href="/StudentWeb/vezbaSecurity/adminHomeServlet.htmlp=<%=pageNumber - 1%>">  < </a>		
-		<div > Strana: <%= pageNumber	%></div>
-		<a href="/StudentWeb/vezbaSecurity/adminHomeServlet.htmlp=<%=pageNumber + 1%>"> > </a>
+		
 </table>
+
+<jsp:include  page="paginator.jsp"> 
+<jsp:param  name="servlet" value="adminHomeServlet"/>
+<jsp:param  name="pageNumber" value="<%= pageNumber %>"/> 
+</jsp:include>
+
+ <jsp:include page="footer.jsp"></jsp:include>
+ 
+
 </body>
 </html>
