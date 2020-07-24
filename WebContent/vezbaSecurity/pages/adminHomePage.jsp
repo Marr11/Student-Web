@@ -4,12 +4,19 @@
 <html>
 <head>
  <link rel="stylesheet" href="/StudentWeb/vezbaSecurity/assets/css/stilovi.css">
+ <script src="/StudentWeb/vezbaSecurity/assets/js/adminHone.js">
 <meta charset="ISO-8859-1">
 <title>Admin home page</title>
 </head>
 <body>
 
 <jsp:include page="menu.jsp"></jsp:include>
+
+ <div>
+	<a href="javascript:setNumberOfRows(10);">10</a>
+	<a href="javascript:setNumberOfRows(20);">20</a>
+	<a href="javascript:setNumberOfRows(50);">50</a>
+ </div>
 
  <table border="1">
  	<th>Broj indeksa</th>
