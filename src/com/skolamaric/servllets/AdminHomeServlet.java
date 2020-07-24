@@ -1,10 +1,11 @@
-package com.skolamaric.servllets;
+ package com.skolamaric.servllets;
 
 import java.io.IOException;
 import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -13,6 +14,7 @@ import com.skolamaric.exceptions.dao.ResultNotFoundException;
 import com.skolamaric.model.Roles;
 import com.skolamaric.model.Student;
 import com.skolamaric.servis.AdministriranjeStudenata;
+import com.skolamaric.utils.KONSTANTE;
 
 /**
  * Servlet implementation class AdminHomeServlet
@@ -21,6 +23,7 @@ import com.skolamaric.servis.AdministriranjeStudenata;
 @WebServlet("/vezbaSecurity/adminHomeServlet.html")
 public class AdminHomeServlet extends BaseAutorization {
 	private static final long serialVersionUID = 1L;
+	private static final String CONTRO_TABLE_COOKIE = "rowsInTable";
 	
 
 	/**
@@ -43,6 +46,8 @@ public class AdminHomeServlet extends BaseAutorization {
 		}catch (NumberFormatException e) {
 			pageNumber = 1;
 		}
+		
+		int rowsInTable = getRowsInTable(request);
 		AdministriranjeStudenata administracija = new AdministriranjeStudenata();
 		List<Student> studenti = null;
 		try {
@@ -56,6 +61,20 @@ public class AdminHomeServlet extends BaseAutorization {
 			request.getRequestDispatcher("/vezbaSecurity/pages/adminHomePage.jsp").forward(request, response);
 		}
 
+
+	private int getRowsInTable(HttpServletRequest request) {
+		  Cookie[] cookies = request.getCookies();
+		  if(cookies != null) {
+		      for (int i = 0; i < cookies.length; i++) {
+		          Cookie cookie=cookies[i];
+		          String cookieName = cookie.getName();
+		          
+		        if(CONTRO_TABLE_COOKIE.equals(cookieName))  
+		         return Integer.parseInt(cookie.getValue());
+		       }
+		   }
+		return KONSTANTE.BROJ_PRIKAZA_PO_STRANICI;
+	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse

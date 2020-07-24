@@ -4,7 +4,7 @@
 <html>
 <head>
  <link rel="stylesheet" href="/StudentWeb/vezbaSecurity/assets/css/stilovi.css">
- <script src="/StudentWeb/vezbaSecurity/assets/js/adminHone.js">
+ <script src="/StudentWeb/vezbaSecurity/assets/js/adminHome.js"> </script>
 <meta charset="ISO-8859-1">
 <title>Admin home page</title>
 </head>
@@ -12,7 +12,7 @@
 
 <jsp:include page="menu.jsp"></jsp:include>
 
- <div>
+ <div class="standardWidth">
 	<a href="javascript:setNumberOfRows(10);">10</a>
 	<a href="javascript:setNumberOfRows(20);">20</a>
 	<a href="javascript:setNumberOfRows(50);">50</a>

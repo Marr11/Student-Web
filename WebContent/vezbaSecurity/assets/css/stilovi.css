@@ -1,6 +1,7 @@
 .standardWidth{
 	width: 40%;
 	text-align: center;
+	
 }
 
 .menu-header{
@@ -27,7 +28,7 @@
 }
 
 a{
-	color: white;
+	color:black;
 	size: 15px;
 	
 }
