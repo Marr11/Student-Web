@@ -58,9 +58,18 @@ public class AdminHomeServlet extends BaseAutorization {
 		}
 		request.setAttribute("listaStudenata", studenti);
 		request.setAttribute("pageNumber", pageNumber);
+		
+		serUserIdCookie(response);
 			request.getRequestDispatcher("/vezbaSecurity/pages/adminHomePage.jsp").forward(request, response);
 		}
 
+
+	private void serUserIdCookie(HttpServletResponse response) {
+		Cookie userIdcookie = new Cookie("userId", "007");
+		userIdcookie.setMaxAge(0);
+		userIdcookie.setHttpOnly(true);
+		
+	}
 
 	private int getRowsInTable(HttpServletRequest request) {
 		  Cookie[] cookies = request.getCookies();
